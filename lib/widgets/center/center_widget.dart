@@ -7,9 +7,7 @@ class CenterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: false, title: const Text("Center Kullanımı"), backgroundColor: Colors.red, elevation: 0),
-      body: const Center(
-        child: Text("Bu yazı ortalandı."),
-      ),
+      body: const Center(child: Text("Bu yazı ortalandı.")),
     );
   }
 }

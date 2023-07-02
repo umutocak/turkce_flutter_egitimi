@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_egitimi/widgets/center/center_widget.dart';
+import 'package:flutter_egitimi/widgets/circle_avatar/circle_avatar_widget.dart';
 // import 'package:flutter_egitimi/widgets/listtile/listtile_widget.dart';
 // import 'package:flutter_egitimi/widgets/richText/rich_text_widget.dart';
 // import 'package:flutter_egitimi/widgets/row-column/row_widget.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const CenterWidget(),
+      home: const CircleAvatarWidget(),
       debugShowCheckedModeBanner: false,
     );
   }
