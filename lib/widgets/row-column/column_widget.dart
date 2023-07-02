@@ -7,14 +7,16 @@ class ColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start, // start, end, spaceAround, spaceBetween, spaceEvenly
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text("Yazı 1"),
-          Text("Yazı 2")
-        ], // Column : Birden fazla child alır. İçerisinde bulundurduğu verileri dikey görünümde sıralar.
+      appBar: AppBar(centerTitle: false, title: const Text("Column Kullanımı"), backgroundColor: Colors.red, elevation: 0),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // start, end, spaceAround, spaceBetween, spaceEvenly
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text("Name", style: TextStyle(fontWeight: FontWeight.bold),),
+            Text("Umut Ocak")
+          ], // Column : Birden fazla child alır. İçerisinde bulundurduğu verileri dikey görünümde sıralar.
+        ),
       ),
     );
   }
