@@ -8,6 +8,8 @@ class RichTextWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RichText(
             text: const TextSpan(

@@ -1,5 +1,3 @@
-# flutter_egitimi
+# Türkçe Flutter Eğitimi
 
-Bu projede, flutter kullanırken sürekli olarak kullanacağınız sistemleri, widget'ları anlatmaktayım. Bu proje
-sayesinde, flutter hakkında detaylı bilgiye erişebilirsiniz. Bu projeyi incelemeden önce temel bilgilere sahip
-olmalısınız.
+Bu projede, flutter kullanırken karşınıza çıkabilecek bütün Widget'ları, mimarileri anlatmakta olacağım. Bu eğitimi incelemeden önce giriş seviyesinde dart bilginizin olması gerekmektedir.
