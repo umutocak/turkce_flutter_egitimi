@@ -1,19 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_egitimi/core/base/base_state.dart';
 
-class CachedNetworkImageWidget extends StatelessWidget {
-  const CachedNetworkImageWidget({super.key});
+class CachedNetworkImageWidget extends StatelessWidget with BaseState {
+  CachedNetworkImageWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           centerTitle: false,
-          title: const Text(
-            "Cache Image Kullanımı",
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.black,
+          title: Text("Cache Image Kullanımı", style: TextStyle(color: colorConstant.white)),
+          backgroundColor: colorConstant.maroon,
+          iconTheme: IconThemeData(color: colorConstant.white),
           elevation: 0),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -23,12 +22,12 @@ class CachedNetworkImageWidget extends StatelessWidget {
             const Text('Cached network image ile, yüklemek istediğiniz görselleri, cache üzerine alarak daha hızlı yükleme sağlayabilirsiniz.'),
             const SizedBox(height: 15),
             RichText(
-              text: const TextSpan(
+              text: TextSpan(
                 text: 'Ayrıca',
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: colorConstant.black),
                 children: [
-                  TextSpan(text: ' placeholde ve errorWidget', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-                  TextSpan(text: ' kısımlarını belirleyerek, yükleme ve hata kısmında özel durumları tanımlayabilirsiniz.'),
+                  TextSpan(text: ' placeholde ve errorWidget', style: TextStyle(color: colorConstant.black, fontWeight: FontWeight.bold)),
+                  const TextSpan(text: ' kısımlarını belirleyerek, yükleme ve hata kısmında özel durumları tanımlayabilirsiniz.'),
                 ],
               ),
             ),

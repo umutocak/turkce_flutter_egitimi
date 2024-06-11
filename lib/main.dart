@@ -2,8 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_egitimi/views/home/home_view.dart';
+import 'package:flutter_egitimi/views/widgets/images/image_view.dart';
 import 'package:flutter_egitimi/views/widgets/widget_view.dart';
+import 'package:flutter_egitimi/widgets/center/center_widget.dart';
+import 'package:flutter_egitimi/widgets/circle_avatar/circle_avatar_widget.dart';
+import 'package:flutter_egitimi/widgets/circular_progress_indicator/circular_proogress_indicator.dart';
+import 'package:flutter_egitimi/widgets/image/cached_network_image_widget.dart';
 import 'package:flutter_egitimi/widgets/image/image_widget.dart';
+import 'package:flutter_egitimi/widgets/richText/rich_text_widget.dart';
+import 'package:flutter_egitimi/widgets/row-column/column_widget.dart';
+import 'package:flutter_egitimi/widgets/row-column/row_widget.dart';
+import 'package:flutter_egitimi/widgets/text/text_widget.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -45,8 +54,17 @@ class MyApp extends StatelessWidget {
        */
       routes: {
         '/': (context) => const HomeView(),
-        '/Image': (context) => const ImageWidget(),
-        '/widgets': (context) => const WidgetView(),
+        '/Image': (context) => ImageView(),
+        '/widgets': (context) => WidgetView(),
+        '/imageWidget': (context) => ImageWidget(),
+        '/cachedImage': (context) => CachedNetworkImageWidget(),
+        '/rowWidget': (context) => RowWidget(),
+        '/columnWidget': (context) => ColumnWidget(),
+        '/rich-text': (context) => RichTextWidget(),
+        '/circle-avatar': (context) => CircleAvatarWidget(),
+        '/center': (context) => CenterWidget(),
+        '/text': (context) => TextWidget(),
+        '/circular-progress': (context) => CircularProgressIndicatorWidget(),
       },
     );
   }
