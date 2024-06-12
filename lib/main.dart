@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_egitimi/views/home/home_view.dart';
 import 'package:flutter_egitimi/views/widgets/images/image_view.dart';
 import 'package:flutter_egitimi/views/widgets/widget_view.dart';
+import 'package:flutter_egitimi/widgets/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
 import 'package:flutter_egitimi/widgets/center/center_widget.dart';
 import 'package:flutter_egitimi/widgets/circle_avatar/circle_avatar_widget.dart';
 import 'package:flutter_egitimi/widgets/circular_progress_indicator/circular_proogress_indicator.dart';
+import 'package:flutter_egitimi/widgets/drawer/drawer_widget.dart';
 import 'package:flutter_egitimi/widgets/image/cached_network_image_widget.dart';
 import 'package:flutter_egitimi/widgets/image/image_widget.dart';
 import 'package:flutter_egitimi/widgets/richText/rich_text_widget.dart';
@@ -65,6 +67,8 @@ class MyApp extends StatelessWidget {
         '/center': (context) => CenterWidget(),
         '/text': (context) => TextWidget(),
         '/circular-progress': (context) => CircularProgressIndicatorWidget(),
+        '/bottom-bar': (context) => const BottomNavigationBarWidget(),
+        '/drawer': (context) => const DrawerWidget(),
       },
     );
   }
