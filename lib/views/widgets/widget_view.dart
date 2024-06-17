@@ -91,10 +91,58 @@ class WidgetView extends StatelessWidget with BaseState {
                 trailing: const Icon(Icons.arrow_right_alt),
                 onTap: () => Navigator.pushNamed(context, '/drawer'),
               ),
+              ListTile(
+                title: const Text('Alert Dialog', style: TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: const Text('Ekranda popup menü çıkartmak için kullanılır'),
+                leading: Icon(Icons.star, color: colorConstant.warm),
+                trailing: const Icon(Icons.arrow_right_alt),
+                onTap: () => swDialog(context),
+              ),
+              ListTile(
+                title: const Text('Snackbar', style: TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: const Text('Yükleniyor tarzı hareketleri bildirmek için kullanabileceğiniz bir widget'),
+                leading: Icon(Icons.star, color: colorConstant.warm),
+                trailing: const Icon(Icons.arrow_right_alt),
+                //? ScaffoldMessenger.of(context).showSnackBar => Snackbar'ı göstermek için kullanılır.
+                onTap: () => ScaffoldMessenger.of(context).showSnackBar(showSnackbar(context)),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
+/*? Dialog'u göstermek için showDialog metodunu kullanıyoruz. Biz bunu düzgün bir şekilde tutmak için
+    bir methodun içerisine ekliyoruz. showDialog kısmını kullanarak gerekli ihtiyacınızı çözebilirsiniz.
+*/
+  swDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Emin misiniz ?'),
+        content: const Text('Bu işlemi yapmak istediğinize emin misiniz ?'),
+        actions: <Widget>[
+          TextButton(onPressed: () => Navigator.pop(context, 'Cancel'), child: const Text('İptal')),
+          TextButton(onPressed: () => Navigator.pop(context, 'OK'), child: const Text('Onayla')),
+        ],
+      ),
+    );
+  }
+//? Snackbar içeriğini ayrı bir yerde ayarlayıp düzenliyoruz.
+  showSnackbar(BuildContext context) {
+    return SnackBar(
+        content: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Yükleniyor..'),
+            SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.blue)),
+          ],
+        ),
+        duration: const Duration(seconds: 2),
+        backgroundColor: colorConstant.black,
+        behavior: SnackBarBehavior.floating);
+  }
+
+
 }
