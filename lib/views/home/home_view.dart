@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_egitimi/core/base/base_state.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomeView extends StatelessWidget with BaseState {
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home View", style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color(0xff49243E),
+        title:  Text("Home View", style: TextStyle(color: colorConstant.warm)),
+        backgroundColor: colorConstant.maroon,
       ),
       body: Column(
         children: [

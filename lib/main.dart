@@ -2,12 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_egitimi/views/home/home_view.dart';
-import 'package:flutter_egitimi/views/widgets/images/image_view.dart';
-import 'package:flutter_egitimi/views/widgets/widget_view.dart';
+import 'package:flutter_egitimi/views/widget/buttons/button_view.dart';
+import 'package:flutter_egitimi/views/widget/images/image_view.dart';
+import 'package:flutter_egitimi/views/widget/widget_view.dart';
 import 'package:flutter_egitimi/widgets/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
+import 'package:flutter_egitimi/widgets/buttons/common/common_button_widget.dart';
 import 'package:flutter_egitimi/widgets/center/center_widget.dart';
 import 'package:flutter_egitimi/widgets/circle_avatar/circle_avatar_widget.dart';
 import 'package:flutter_egitimi/widgets/circular_progress_indicator/circular_proogress_indicator.dart';
+import 'package:flutter_egitimi/widgets/container/container_widget.dart';
 import 'package:flutter_egitimi/widgets/drawer/drawer_widget.dart';
 import 'package:flutter_egitimi/widgets/image/cached_network_image_widget.dart';
 import 'package:flutter_egitimi/widgets/image/image_widget.dart';
@@ -55,8 +58,9 @@ class MyApp extends StatelessWidget {
        * ! '/' => Uygulama açılış sayfası anlamına gelir.
        */
       routes: {
-        '/': (context) => const HomeView(),
+        '/': (context) => HomeView(),
         '/Image': (context) => ImageView(),
+        '/buttons': (context) => ButtonView(),
         '/widgets': (context) => WidgetView(),
         '/imageWidget': (context) => ImageWidget(),
         '/cachedImage': (context) => CachedNetworkImageWidget(),
@@ -69,6 +73,8 @@ class MyApp extends StatelessWidget {
         '/circular-progress': (context) => CircularProgressIndicatorWidget(),
         '/bottom-bar': (context) => const BottomNavigationBarWidget(),
         '/drawer': (context) => const DrawerWidget(),
+        '/container': (context) => ContainerWidget(),
+        '/commonbutton': (context) => CommonButtonWidget(),
       },
     );
   }

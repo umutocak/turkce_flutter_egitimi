@@ -12,15 +12,22 @@ class WidgetView extends StatelessWidget with BaseState {
       /// ? State içerisinden colorConstant.colorName şeklinde erişerek kullanabiliriz.
       /// ! Kullanım sağladığınız yerde const ifadesini kullanamazsınız.
       appBar: AppBar(
-        title: Text("Widget View", style: TextStyle(color: colorConstant.white)),
+        title: Text("Widget View", style: TextStyle(color: colorConstant.warm)),
         backgroundColor: colorConstant.maroon,
         //? Geri butonunun rengini buradan ayarlayabilirsin.
-        iconTheme: IconThemeData(color: colorConstant.white),
+        iconTheme: IconThemeData(color: colorConstant.warm),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
+              ListTile(
+                title: const Text('Butonlar', style: TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: const Text('Butonlar ile ilgili tüm kullanımlara buradan erişebilirsin'),
+                leading: Icon(Icons.radio_button_checked, color: colorConstant.warm),
+                trailing: const Icon(Icons.arrow_right_alt),
+                onTap: () => Navigator.pushNamed(context, '/buttons'),
+              ),
               ListTile(
                 title: const Text('Resimler', style: TextStyle(fontWeight: FontWeight.bold)),
                 subtitle: const Text('Resimlerle ilgili kütüphane ve örneklere buradan erişebilirsin'),
@@ -105,6 +112,14 @@ class WidgetView extends StatelessWidget with BaseState {
                 trailing: const Icon(Icons.arrow_right_alt),
                 //? ScaffoldMessenger.of(context).showSnackBar => Snackbar'ı göstermek için kullanılır.
                 onTap: () => ScaffoldMessenger.of(context).showSnackBar(showSnackbar(context)),
+              ),
+              ListTile(
+                title: const Text('Container', style: TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: const Text('Bir kutu oluşturmanıza olanak sağlar'),
+                leading: Icon(Icons.star, color: colorConstant.warm),
+                trailing: const Icon(Icons.arrow_right_alt),
+                //? ScaffoldMessenger.of(context).showSnackBar => Snackbar'ı göstermek için kullanılır.
+                onTap: () => Navigator.pushNamed(context, '/container'),
               ),
             ],
           ),
